@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+  become_user: admin
+  tasks:
+
+  - name: creating the bucket
+    shell: |
+        gcloud storage buckets create gs://{{ bucket_name }} --project={{ Project_ID }} --default-storage-class={{ Storage_Class }} --location={{ bucket_location }} --uniform-bucket-level-access

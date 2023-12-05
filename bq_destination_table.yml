@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+  become_user: admin
+  tasks:
+
+  - name: basic bq cmd
+    shell: |
+        bq --location=asia-south1 query \
+--destination_table ht-xl-357708:sample_datatset1.env_var_override \
+--use_legacy_sql=false 'create table sample_datatset1.env_var_override (env_nm string(20), prject_nm string(20), ab_job_mux_configuration string(20), db_key_file_nm string(20), created_dte date(20));'

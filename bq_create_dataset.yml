@@ -1,0 +1,8 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+  become_user: admin
+  tasks:
+  - name: create dataset in BQ
+    shell: |
+       bq --location={{ location  }} mk -d --project_id={{ project_id }} '{{ dataset_name }}'

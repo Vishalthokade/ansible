@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+  become_user: admin
+  tasks:
+
+  - name: basic bq cmd
+    shell: |
+        bq --location={{ location }} load --source_format={{ source_format }} --autodetect {{ project_id }}.{{ dataset_name }}.{{ table_name }} {{ gsutil_URI }}
