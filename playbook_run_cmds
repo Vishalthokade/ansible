@@ -1,0 +1,11 @@
+ansible-playbook -i inventory_file bq_create_dataset.yml -e "location=your_location project_id=your_project_id dataset_name=your_dataset_name"
+
+ansible-playbook -i inventory_file bq_create_table.yml -e "dataset_name=your_dataset_name table_name=your_table_name"
+
+ansible-playbook -i inventory_file bq_destination_table.yml
+
+ansible-playbook -i inventory_file bq_load_data.yml -e "location=your_location source_format=your_source_format project_id=your_project_id dataset_name=your_dataset_name table_name=your_table_name gsutil_URI=your_bucket_uri"
+
+ansible-playbook -i inventory_file bq_truncate_data.yml
+
+ansible-playbook -i inventory_file gcs_bucket_creation.yml -e "bucket_name=your_bucket_name Project_ID=your_project_id Storage_Class=your-storage_class bucket_location=your_bucket_location"
