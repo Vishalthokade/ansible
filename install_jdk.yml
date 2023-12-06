@@ -1,4 +1,6 @@
-# tasks file for install_jdk
+- name: install jdk
+  hosts: all
+  become: yes
   - name: Create the /usr/java directory
     file:
       path: '/usr/java'
