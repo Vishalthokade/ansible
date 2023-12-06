@@ -1,4 +1,6 @@
-# tasks file for install_kubernetes
+- name: install kubernetes
+  hosts: all
+  become: yes
   - name: Install dependencies
     apt:
       name:
