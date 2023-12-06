@@ -1,4 +1,6 @@
-# tasks file for install_python3
+- name: install python
+  hosts: all
+  become: yes
   - name: Install packages
     apt:
       name: python3
