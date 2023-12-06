@@ -9,3 +9,15 @@ ansible-playbook -i inventory_file bq_load_data.yml -e "location=your_location s
 ansible-playbook -i inventory_file bq_truncate_data.yml
 
 ansible-playbook -i inventory_file gcs_bucket_creation.yml -e "bucket_name=your_bucket_name Project_ID=your_project_id Storage_Class=your-storage_class bucket_location=your_bucket_location"
+
+ansible-playbook -i inventory_file install_docker.yml
+
+ansible-playbook -i inventory_file install_helm.yml
+
+ansible-playbook -i inventory_file install_jdk.yml
+
+ansible-playbook -i inventory_file install_ksh.yml
+
+ansible-playbook -i inventory_file install_kubernetes.yml
+
+ansible-playbook -i inventory_file install_python.yml
