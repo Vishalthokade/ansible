@@ -21,3 +21,7 @@ ansible-playbook -i inventory_file install_ksh.yml
 ansible-playbook -i inventory_file install_kubernetes.yml
 
 ansible-playbook -i inventory_file install_python.yml
+
+ansible-playbook -i inventory_file install_postgresql.yml
+
+ansible-playbook -i inventory_file install_gcloud_gke_auth_plugin.yml
