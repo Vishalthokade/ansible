@@ -1,4 +1,6 @@
-# tasks file for install_docker
+- name: install docker
+  hosts: all
+  become: yes
   - name: Install dependencies
     apt:
       name: "{{ item }}"
