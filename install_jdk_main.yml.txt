@@ -1,0 +1,33 @@
+# tasks file for install_jdk
+  - name: Create the /usr/java directory
+    file:
+      path: '/usr/java'
+      state: directory
+      owner: root
+      group: root
+  
+  - name: Copy the jdk tar file from /tmp to /usr/java
+    copy: >
+        src='/tmp/jdk1.8.0_141_zip'
+        dest='/usr/java/jdk1.8.0_141_zip'
+        owner='root'
+        group='root'
+        mode=0644
+        backup=yes
+        remote_src=yes
+
+  - name: Unarchive java tar file
+    unarchive:
+      src: '/usr/java/jdk1.8.0_141_zip'
+      dest: '/usr/java'
+      owner: 'root'
+      group: 'root'
+      creates: 'jdk1.8.0_141'
+      remote_src: yes
+  
+  - name: Install packages
+    become: true
+    apt:
+      name: openjdk-11-jre-headless
+      state: present
+      update_cache: yes
