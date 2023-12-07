@@ -1,5 +1,4 @@
-  - name: install jdk
-  hosts: all
+ hosts: all
   become: yes
   - name: Create the /usr/java directory
     file:
