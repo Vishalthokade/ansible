@@ -1,4 +1,9 @@
-- name: install jdk
+- hosts: all
+  become: yes
+  gather_facts: no
+  become_user: admin
+  tasks:
+  - name: install jdk
   hosts: all
   become: yes
   - name: Create the /usr/java directory
