@@ -1,8 +1,3 @@
-- hosts: all
-  become: yes
-  gather_facts: no
-  become_user: admin
-  tasks:
   - name: install helm
   hosts: all
   become: yes
